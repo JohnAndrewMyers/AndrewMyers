@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&family=League+Spartan:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=GFS+Didot&display=swap');
+
+/* Start writing your CSS */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+  /* nav styles */
+
+  header{
+    background-color: #EEDA92;
+    width: 15%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 2%;
+    font-family: "League Spartan", sans-serif;
+  }
+
+  header img{
+    width: 100px;
+    height: auto;
+  }
+
+  header ul li a{
+    color: #9B9D57;
+    text-decoration: none;
+    font-size: 40px;
+    
+  }
+
+  #navstyles{
+    background-color: #EEDA92;
+    color: #9B9D57; 
+  }
+
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #EEDA92;
+    color: #9B9D57;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  /* home styles */
+  
+  #homebody{
+    background-color: #9B9D57;
+    color: #EEDA92;
+  }
+
+  .home_logo{
+    width: 100px;
+    height: auto;
+  }
+
+  .hometext{
+    text-align: center;
+    margin: 5%;
+  }
+
+  .welcome{
+    font-family: "GFS Didot", serif;
+    font-size: 216px;
+  }
+  
+
+  .subtitle{
+    font-size: 115px;
+    font-family: "League Spartan", sans-serif;
+  }
+
+  /* Contact styles */
+
+  .bodytext{
+    margin-left: 5%;
+    margin-right: 50%;
+    font-family: "GFS Didot", serif;
+  }
+  
+  .list{
+    margin-left: 5%;
+    margin-right: 50%;
+    font-family: "League Spartan", sans-serif;
+  }
+
+  form{
+    font-family: "League Spartan", sans-serif;
+    
+  }
+
+  input{
+    font-family: "League Spartan", sans-serif;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #D9D9D9;
+    border: 1px solid #D9D9D9;
+    margin: 3%;
+  }
+
+ textarea{
+  font-family: "League Spartan", sans-serif;
+    width: 200px;
+    height: 150px;
+    border-radius: 15px;
+    background-color: #D9D9D9;
+    border: 1px solid #D9D9D9;
+    margin: 3%;
+  }
+
+  #mySidepanel {
+    font-family: "League Spartan", sans-serif;
+  }
+
+  /* Green sidenav styles */
+
+  .sidepanel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #EEDA92;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #9B9D57;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #9B9D57;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+   
+  }
+
+  img#nav_logo{
+    width: 100px;
+    height: auto;
+  }
+
+  /* Whitepage sidenav styles */
+
+  .sidepanel_white  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #EEDA92;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidepanel_white a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #9B9D57;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidepanel_white a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidepanel_white .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  .openbtn_white {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+   
+  }
+
+  img#nav_logo{
+    width: 100px;
+    height: auto;
+  }
+
+  /* Main Styles */
+
+  section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+  }
+
+  .horizontallayout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 90vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .pageheader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 90%;
+    position: absolute;
+    top: 5%;
+  }
+
+  .pageheader h2{
+    position: absolute;
+    right: 15%;
+    top: -135%;
+    font-size: 30px;
+    font-family: "League Spartan", sans-serif;
+    font-style: normal;
+    transform: rotate(4deg);
+  }
+
+  /* contact styles */
+
+  #contactbody{
+    background-color: #9B9D57;
+    color: #EEDA92;
+  }
+ 
+  /* porfolio styles */
+
+  img#gig{
+    width: 450px;
+    height: auto;
+ }
+
+ img#gameover{
+  width: 450px;
+  height: auto;
+}
+
+img#snapshot1{
+  width: auto;
+  height: 450px;
+}
+
+img#snapshot2{
+  width: auto;
+  height: 450px;
+}
+
+img#childhood{
+  width: auto;
+  height: 450px;
+}
+
+img#soldiers{
+  width: auto;
+  height: 450px;
+}
+
+img#favs{
+  width: auto;
+  height: 450px;
+}
+
+img#bunnies{
+  width: auto;
+  height: 450px;
+}
+
+img#spraypaint{
+  width: auto;
+  height: 450px;
+}
+
+img#maritime{
+  width: auto;
+  height: 450px;
+}
+
+  /* Tooltip */
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #D9D9D9;
+    color: #000;
+    text-align: center;
+    padding: 5px 0;
+  
+
+  
+    /* Position the tooltip */
+
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+
+  /* Media Queries */
+
+  /* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1439.98px) { 
+
+}
+
+/* Large devices (desktops, less than 1024px) */
+@media (max-width: 1023.98px) { 
+
+}
+
+/* Medium devices (tablets, less than 744px) */
+@media (max-width: 743.98px) { 
+
+}
+
+/* Small devices (landscape phones, less than 430px) */
+@media (max-width: 429.98px) {
+
+}
+
+/* X-Small devices (portrait phones, less than 375px) */
+@media (max-width: 374.98px) {
+
+}
