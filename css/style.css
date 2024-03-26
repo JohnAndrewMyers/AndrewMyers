@@ -53,6 +53,102 @@ table {
 	border-spacing: 0;
 }
 
+  /* Main Styles */
+
+  section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+  }
+
+
+  .horizontallayout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    width: 90vw;
+    position: relative;
+    top: 150px;
+}
+
+.horizontallayout2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  width: 90vw;
+  position: relative;
+  top: 50px;
+  height: 60vh;
+}
+
+  .hz_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 1%;
+    width: 90%;
+  }
+
+  .pageheader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 90%;
+    position: absolute;
+    top: 15%;
+}
+
+.pageheader2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 90%;
+  position: relative;
+}
+
+  .pageheader h2{
+    position: absolute;
+    right: 15%;
+    top: -135%;
+    font-size: 30px;
+    font-family: "League Spartan", sans-serif;
+    font-style: normal;
+    transform: rotate(4deg);
+  }
+
+  .portfoliopage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    scroll-behavior: smooth;
+  }
+
+  .portfoiosection img{
+    width: 100%;
+    height: auto;
+    margin: 1%;
+  }
   /* nav styles */
 
   header{
@@ -109,10 +205,17 @@ table {
     height: auto;
   }
 
-  .hometext{
+  .hometext {
+    display: flex;
     text-align: center;
     margin: 5%;
-  }
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1%;
+    position: relative;
+    top: 150px;
+}
 
   .welcome{
     font-family: "GFS Didot", serif;
@@ -125,6 +228,20 @@ table {
     font-family: "League Spartan", sans-serif;
   }
 
+  #item1{
+    background-color: #9B9D57;
+  }
+
+  .portfoliosection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    width: 100%;
+  }
+
   /* Contact styles */
 
   .bodytext{
@@ -132,6 +249,8 @@ table {
     margin-right: 50%;
     font-family: "GFS Didot", serif;
   }
+
+
   
   .list{
     margin-left: 5%;
@@ -164,157 +283,8 @@ table {
     margin: 3%;
   }
 
-  #mySidepanel {
-    font-family: "League Spartan", sans-serif;
-  }
 
-  /* Green sidenav styles */
 
-  .sidepanel  {
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: #EEDA92;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  .sidepanel a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #9B9D57;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidepanel a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidepanel .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-  }
-  
-  .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #9B9D57;
-    padding: 10px 15px;
-    border: none;
-  }
-  
-  .openbtn:hover {
-   
-  }
-
-  img#nav_logo{
-    width: 100px;
-    height: auto;
-  }
-
-  /* Whitepage sidenav styles */
-
-  .sidepanel_white  {
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: #EEDA92;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  .sidepanel_white a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #9B9D57;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidepanel_white a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidepanel_white .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-  }
-  
-  .openbtn_white {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: white;
-    padding: 10px 15px;
-    border: none;
-  }
-  
-  .openbtn:hover {
-   
-  }
-
-  img#nav_logo{
-    width: 100px;
-    height: auto;
-  }
-
-  /* Main Styles */
-
-  section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw;
-    margin: 0 auto;
-    flex-wrap: wrap;
-
-  }
-
-  .horizontallayout{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    width: 90vw;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
-
-  .pageheader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    width: 90%;
-    position: absolute;
-    top: 5%;
-  }
-
-  .pageheader h2{
-    position: absolute;
-    right: 15%;
-    top: -135%;
-    font-size: 30px;
-    font-family: "League Spartan", sans-serif;
-    font-style: normal;
-    transform: rotate(4deg);
-  }
 
   /* contact styles */
 
@@ -325,54 +295,65 @@ table {
  
   /* porfolio styles */
 
+
   img#gig{
-    width: 450px;
+    width: 40%;
     height: auto;
+    margin: 1%;
  }
 
  img#gameover{
-  width: 450px;
-  height: auto;
+  width: 40%;
+    height: auto;
+    margin: 1%;
 }
 
 img#snapshot1{
-  width: auto;
-  height: 450px;
+  width: 40%;
+    height: auto;
+    margin: 1%;
 }
 
 img#snapshot2{
-  width: auto;
-  height: 450px;
+  width: 40%;
+    height: auto;
+    margin: 1%;
 }
 
 img#childhood{
-  width: auto;
-  height: 450px;
+  width: 40%;
+    height: auto;
+    margin: 1%;
 }
 
 img#soldiers{
-  width: auto;
-  height: 450px;
+  width: 40%;
+    height: auto;
+    margin: 1%;
 }
 
 img#favs{
-  width: auto;
-  height: 450px;
+  width: 40%;
+  height: auto;
+  margin: 1%;
 }
 
 img#bunnies{
-  width: auto;
-  height: 450px;
+  width: 40%;
+  height: auto;
+  margin: 1%;
 }
 
 img#spraypaint{
-  width: auto;
-  height: 450px;
+  width: 40%;
+  height: auto;
+  margin: 1%;
 }
 
 img#maritime{
-  width: auto;
-  height: 450px;
+  width: 40%;
+  height: auto;
+  margin: 1%;
 }
 
   /* Tooltip */
