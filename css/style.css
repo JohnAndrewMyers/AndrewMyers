@@ -77,6 +77,7 @@ table {
     width: 90vw;
     position: relative;
     top: 150px;
+    color: #EEDA92;
 }
 
 .horizontallayout2 {
@@ -326,61 +327,61 @@ table {
 
 
   img#gig{
-    width: 40%;
+    width: 77%;
     height: auto;
     margin: 1%;
  }
 
  img#gameover{
-  width: 40%;
+  width: 25%;
     height: auto;
     margin: 1%;
 }
 
 img#snapshot1{
-  width: 40%;
+  width: 36%;
     height: auto;
     margin: 1%;
 }
 
 img#snapshot2{
-  width: 40%;
+  width: 36%;
     height: auto;
     margin: 1%;
 }
 
 img#childhood{
-  width: 40%;
+  width: 65%;
     height: auto;
     margin: 1%;
 }
 
 img#soldiers{
-  width: 40%;
+  width: 118%;
     height: auto;
     margin: 1%;
 }
 
 img#favs{
-  width: 40%;
+  width: 46%;
   height: auto;
   margin: 1%;
 }
 
 img#bunnies{
-  width: 40%;
+  width: 92%;
   height: auto;
   margin: 1%;
 }
 
 img#spraypaint{
-  width: 40%;
+  width: 60%;
   height: auto;
   margin: 1%;
 }
 
 img#maritime{
-  width: 40%;
+  width: 75%;
   height: auto;
   margin: 1%;
 }
