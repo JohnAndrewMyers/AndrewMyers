@@ -93,12 +93,12 @@ a:hover {
 	line-height: 3.5;
 	padding: 0 20px;
 	cursor: pointer;
-	background: #EEDA92;
+	/*background: #EEDA92;*/
 }
 
 .menu-toc li a:hover,
 .menu-toc li.menu-toc-current a{
-	background: #EEDA92;
+	/*background: #EEDA92;*/
 }
 
 .menu-panel div {
@@ -134,12 +134,12 @@ a:hover {
 .bb-custom-wrapper nav span,
 .menu-button {
 	position: absolute;
-	width: 35px;
-	height: 35px;
+	width: 100px;
+	height: 100px;
 	top: 0;
 	left: 0;
 	background-image: url('../img/tan_logo.png');
-	background-size: 30px;
+	background-size: 100px;
 	background-position: center;
 	/*background: #EEDA92; */
 	border-radius: 50%;
