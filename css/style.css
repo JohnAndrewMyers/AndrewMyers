@@ -134,22 +134,55 @@ table {
     transform: rotate(4deg);
   }
 
-  .portfoliopage{
+  .portfoliopage {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100vw;
+    width: 92vw;
     margin: 0 auto;
     flex-wrap: wrap;
     scroll-behavior: smooth;
-  }
+}
 
   .portfoiosection img{
     width: 100%;
     height: auto;
     margin: 1%;
   }
+
+  .portfolio-bifold{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 1%;
+    flex-wrap: nowrap;
+  }
+
+  .portfolio-bifold img{
+    width: 100%;
+    height: auto;
+    margin: 1%;
+  }
+
+  .portfolio-bifold-tall{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    margin: 1%;
+    flex-wrap: nowrap;
+  }
+
+  .portfolio-bifold-tall img{
+    width: 100%;
+    height: auto;
+    margin: 1%;
+  }
+
 
   /* nav styles */
 
@@ -264,8 +297,6 @@ table {
   /* Contact styles */
 
   .bodytext{
-    margin-left: 5%;
-    margin-right: 50%;
     font-family: "GFS Didot", serif;
   }
 
@@ -333,7 +364,7 @@ table {
  }
 
  img#gameover{
-  width: 25%;
+  width: 67%;
     height: auto;
     margin: 1%;
 }
@@ -391,21 +422,16 @@ img#maritime{
   .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
+    border-bottom: 2px dotted black;
   }
   
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 200px;
     background-color: #D9D9D9;
     color: #000;
     text-align: center;
-    padding: 5px 0;
-  
-
-  
-    /* Position the tooltip */
-
+    padding: 15px;
     position: absolute;
     z-index: 1;
   }

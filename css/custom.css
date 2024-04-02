@@ -134,11 +134,14 @@ a:hover {
 .bb-custom-wrapper nav span,
 .menu-button {
 	position: absolute;
-	width: 32px;
-	height: 32px;
+	width: 35px;
+	height: 35px;
 	top: 0;
 	left: 0;
-	background: #EEDA92;
+	background-image: url('../img/tan_logo.png');
+	background-size: 30px;
+	background-position: center;
+	/*background: #EEDA92; */
 	border-radius: 50%;
 	color: #9B9D57;
 	line-height: 30px;
@@ -150,7 +153,8 @@ a:hover {
 
 .bb-custom-wrapper nav span:hover,
 .menu-button:hover {
-	background: white;
+	background-image: url('../img/tan_logo.png');
+	opacity: .5;
 }
 
 .bb-custom-wrapper nav span:last-child {
@@ -166,9 +170,6 @@ a:hover {
 
 .menu-button:after {
 	position: absolute;
-	content: '';
-	width: 50%;
-	height: 2px;
 	background: #9B9D57;
 	top: 50%;
 	margin-top: -1px;
