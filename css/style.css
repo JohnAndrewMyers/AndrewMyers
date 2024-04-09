@@ -74,7 +74,7 @@ table {
     flex-direction: row;
     margin: 0 auto;
     flex-wrap: nowrap;
-    width: 90vw;
+    width: 63vw;
     position: relative;
     top: 150px;
     color: #EEDA92;
@@ -134,7 +134,10 @@ table {
   flex-wrap: nowrap;
   width: 90%;
   position: relative;
+  font-family: "League Spartan", sans-serif;
+  font-style: normal;
 }
+
 
   .pageheader h2{
     position: absolute;
@@ -436,6 +439,19 @@ input::placeholder{
  
   /* porfolio styles */
 
+  #hz_sm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    width: 90vw;
+    position: relative;
+    top: -90px;
+    height: 60vh;
+}
+
   h4 {
     font-family: "League Spartan", sans-serif;
     font-size: 32px;
@@ -535,12 +551,96 @@ img#maritime{
   /* Media Queries */
 
   /* X-Large devices (large desktops, less than 1400px) */
-@media (max-width: 1439.98px) { 
-
-}
 
 /* Large devices (desktops, less than 1024px) */
 @media (max-width: 1024px) { 
+
+  h2.subtitle {
+    font-size: 107px;
+    font-family: "League Spartan", sans-serif;
+    color: #EEDA92;
+}
+
+.hz_box img {
+  width: 400px;
+}
+
+.pageheader h2 {
+  position: absolute;
+  right: 0%;
+  top: -135%;
+  font-size: 30px;
+  font-family: "League Spartan", sans-serif;
+  font-style: normal;
+  transform: rotate(4deg);
+}
+
+.pageheader_portfolio h2 {
+  position: relative;
+  top: 52px;
+  left: 750px;
+  font-size: 30px;
+  font-family: "League Spartan", sans-serif;
+  font-style: normal;
+  transform: rotate(4deg);
+  z-index: 44;
+}
+
+#hz_sm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  width: 90vw;
+  position: relative;
+  top: -90px;
+  height: 60vh;
+}
+
+.horizontallayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  width: 90vw;
+  position: relative;
+  top: 150px;
+  color: #EEDA92;
+  left: -80px;
+}
+
+#contactheader {
+  position: absolute;
+  right: 0%;
+  top: -135%;
+  font-size: 30px;
+  font-family: "League Spartan", sans-serif;
+  font-style: normal;
+  transform: rotate(4deg);
+  color: #EEDA92;
+}
+
+img#soldiers {
+  width: 93%;
+  height: auto;
+  margin: 1%;
+}
+
+img#favs {
+  width: 62%;
+  height: auto;
+  margin: 1%;
+}
+
+img#spraypaint {
+  width: 97%;
+  height: auto;
+  margin: 1%;
+}
   
 
 }
