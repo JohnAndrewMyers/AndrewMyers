@@ -117,7 +117,7 @@ table {
 .pageheader_portfolio h2 {
   position: relative;
   top: 70px;
-  left: 1100px;
+  left: 1120px;
   font-size: 30px;
   font-family: "League Spartan", sans-serif;
   font-style: normal;
@@ -141,8 +141,8 @@ table {
 
   .pageheader h2{
     position: absolute;
-    right: 15%;
-    top: -135%;
+    right: 0%;
+    top: -190%;
     font-size: 30px;
     font-family: "League Spartan", sans-serif;
     font-style: normal;
@@ -151,8 +151,8 @@ table {
 
   #contactheader{
     position: absolute;
-    right: 15%;
-    top: -135%;
+    right: 0%;
+    top: -190%;
     font-size: 30px;
     font-family: "League Spartan", sans-serif;
     font-style: normal;
@@ -320,7 +320,7 @@ table {
 
   svg {
     position: relative;
-    left: 78px;
+    left: 0px;
 }
 
   .portfoliosection{
@@ -598,6 +598,7 @@ svg.longsvg_portfolio {
   font-family: "League Spartan", sans-serif;
   font-style: normal;
   transform: rotate(4deg);
+  margin: 1%;
 }
 
 .pageheader_portfolio h2 {
@@ -808,7 +809,7 @@ h2.subtitle {
   flex-wrap: nowrap;
   width: 90vw;
   position: relative;
-  top: -120px;
+  top: -60px;
   height: 40vh;
 }
 
