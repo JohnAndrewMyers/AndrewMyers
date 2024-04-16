@@ -117,13 +117,13 @@ table {
 .pageheader_portfolio h2 {
   position: relative;
   top: 70px;
-  left: 1200px;
+  left: 1100px;
   font-size: 30px;
   font-family: "League Spartan", sans-serif;
   font-style: normal;
   transform: rotate(4deg);
   z-index: 44;
-  color: #e3e;
+  color: #000;
 }
 
 .pageheader2 {
@@ -188,7 +188,7 @@ table {
   }
 
   .portfolio-bifold img{
-    width: 100%;
+    width: 80%;
     height: auto;
     margin: 1%;
   }
@@ -203,8 +203,17 @@ table {
     flex-wrap: nowrap;
   }
 
+  .portfolio-bifold-tall div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+
+  }
+
   .portfolio-bifold-tall img{
-    width: 100%;
+    width: 80%;
     height: auto;
     margin: 1%;
   }
@@ -311,7 +320,7 @@ table {
 
   svg {
     position: relative;
-    left: 12px;
+    left: 78px;
 }
 
   .portfoliosection{
@@ -335,9 +344,10 @@ table {
 
   /* Contact styles */
 
-  .contact_info{
+  .contact_info {
     position: relative;
-    top: -60px;
+    top: -40px;
+    right: 50px;
   }
 
   .bodytext{
@@ -355,7 +365,7 @@ table {
   
   .list{
     margin-left: 24%;
-    margin-right: 50%;
+    margin-right: 30%;
     font-family: "League Spartan", sans-serif;
     text-decoration: underline;
     justify-content: center;
@@ -495,7 +505,7 @@ img#childhood{
 }
 
 img#soldiers{
-  width: 118%;
+  width: 100%;
     height: auto;
     margin: 1%;
 }
@@ -554,6 +564,21 @@ img#maritime{
 
 /* Large devices (desktops, less than 1024px) */
 @media (max-width: 1024px) { 
+
+  svg {
+    position: relative;
+    left: 0px;
+}
+
+svg.longsvg {
+  position: relative;
+  left: 70px;
+}
+
+svg.longsvg_portfolio {
+  position: relative;
+  left: -80px;
+}
 
   h2.subtitle {
     font-size: 107px;
@@ -646,16 +671,362 @@ img#spraypaint {
 }
 
 /* Medium devices (tablets, less than 744px) */
-@media (max-width: 743.98px) { 
+@media (max-width: 744px) { 
+
+  svg {
+    position: relative;
+    left: 0px;
+    width: 113%;
+}
+
+
+  .welcome {
+    font-family: "GFS Didot", serif;
+    font-size: 156px;
+    color: #EEDA92;
+}
+
+  h2.subtitle {
+    font-size: 78px;
+    font-family: "League Spartan", sans-serif;
+    color: #EEDA92;
+}
+
+.horizontallayout2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  width: 90vw;
+  position: relative;
+  top: 120px;
+  height: 60vh;
+}
+
+.content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  font-weight: 300;
+  padding: 7px 18%;
+}
+
+.hz_box img {
+  width: 380px;
+}
+
+svg.longsvg {
+  position: relative;
+  left: 0px;
+}
+
+.portfoliosection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 10%;
+  width: 100%;
+}
+
+.pageheader_portfolio h2 {
+  position: relative;
+  top: 52px;
+  left: 530px;
+  font-size: 30px;
+  font-family: "League Spartan", sans-serif;
+  font-style: normal;
+  transform: rotate(4deg);
+  z-index: 44;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #D9D9D9;
+  color: #000;
+  text-align: center;
+  padding: 15px;
+  position: absolute;
+  right: 5px;
+  z-index: 1;
+}
+
+.horizontallayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  width: 90vw;
+  position: relative;
+  top: 150px;
+  color: #EEDA92;
+  left: -20px;
+}
 
 }
 
 /* Small devices (landscape phones, less than 430px) */
-@media (max-width: 429.98px) {
+@media (max-width: 430px) {
+
+  .welcome {
+    font-family: "GFS Didot", serif;
+    font-size: 91px;
+    color: #EEDA92;
+}
+
+h2.subtitle {
+  font-size: 45px;
+  font-family: "League Spartan", sans-serif;
+  color: #EEDA92;
+  margin-bottom: 2px;
+}
+
+
+  .content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-weight: 300;
+    padding: 7px 18%;
+    width: 140%;
+}
+
+.hz_box img {
+  width: 340px;
+}
+
+#hz_sm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  width: 90vw;
+  position: relative;
+  top: -120px;
+  height: 40vh;
+}
+
+.pageheader_portfolio h2 {
+  position: relative;
+  top: 52px;
+  left: 240px;
+  font-size: 30px;
+  font-family: "League Spartan", sans-serif;
+  font-style: normal;
+  transform: rotate(4deg);
+  z-index: 44;
+}
+
+.portfoliopage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  scroll-behavior: smooth;
+}
+
+svg.longsvg_portfolio {
+  position: relative;
+  left: -20px;
+}
+
+.portfoliosection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 10%;
+  width: 100%;
+}
+
+h4 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 30px;
+  text-align: left;
+}
+
+
+
+  .horizontallayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    width: 90vw;
+    position: relative;
+    top: 150px;
+    color: #EEDA92;
+    left: -20px;
+}
+
+.contact_info {
+  position: relative;
+  top: -20px;
+  right: -20px;
+}
+
+.list {
+  margin-left: 14%;
+  margin-right: 30%;
+  font-family: "League Spartan", sans-serif;
+  text-decoration: underline;
+  position: relative;
+  justify-content: center;
+  left: 30px;
+}
+
+form {
+  font-family: "League Spartan", sans-serif;
+  color: #EEDA92;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: relative;
+  left: 15px;
+}
+
+.contact_info p{
+  font-size: 1.2em;
+    line-height: 1.6;
+    font-weight: 300;
+    padding: 7px 18%;
+    width: 100%;
+}
+
+input {
+  font-family: "League Spartan", sans-serif;
+  width: 200px;
+  height: 32px;
+  border-radius: 15px;
+  background-color: #D9D9D9;
+  border: 1px solid #D9D9D9;
+  margin-bottom: -1%;
+  color: #9B9D57;
+  position: relative;
+  top: -2px;
+}
+
+textarea {
+  font-family: "League Spartan", sans-serif;
+  width: 200px;
+  height: 80px;
+  border-radius: 15px;
+  background-color: #D9D9D9;
+  border: 1px solid #D9D9D9;
+  margin: 2%;
+  color: #9B9D57;
+  overflow-x: hidden;
+  position: relative;
+  top: -20px;
+}
+
+#submit {
+  font-family: "League Spartan", sans-serif;
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #D9D9D9;
+  border: 1px solid #D9D9D9;
+  color: #9B9D57;
+  margin-top: -6%;
+}
 
 }
 
 /* X-Small devices (portrait phones, less than 375px) */
-@media (max-width: 374.98px) {
+@media (max-width: 375px) {
+
+  .menu-toc li a {
+    display: block;
+    color: #9B9D57;
+    font-size: 2em;
+    line-height: 2.5;
+    padding: 0 20px;
+    cursor: pointer;
+    /* background: #EEDA92; */
+}
+
+  .welcome {
+    font-family: "GFS Didot", serif;
+    font-size: 78px;
+    color: #EEDA92;
+}
+
+h2.subtitle {
+  font-size: 39px;
+  font-family: "League Spartan", sans-serif;
+  color: #EEDA92;
+  margin-bottom: 2px;
+}
+
+.content p {
+  font-size: 1.5em;
+  line-height: 1.6;
+  font-weight: 300;
+  padding: 7px 18%;
+  width: 140%;
+}
+
+.bodytext {
+  font-family: "GFS Didot", serif;
+  font-size: 20px;
+}
+
+.pageheader_portfolio h2 {
+  position: relative;
+  top: 52px;
+  left: 200px;
+  font-size: 30px;
+  font-family: "League Spartan", sans-serif;
+  font-style: normal;
+  transform: rotate(4deg);
+  z-index: 44;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #D9D9D9;
+  color: #000;
+  text-align: center;
+  padding: 15px;
+  position: absolute;
+  right: 5px;
+  z-index: 1;
+  font-size: 18px;
+}
+
+.contact_info p {
+  font-size: 1.5em;
+  line-height: 1.6;
+  font-weight: 300;
+  padding: 7px 18%;
+  width: 100%;
+}
+
+.list {
+  margin-left: 14%;
+  margin-right: 10%;
+  font-family: "League Spartan", sans-serif;
+  text-decoration: underline;
+  position: relative;
+  justify-content: center;
+  left: 16px;
+  font-size: 18px;
+}
 
 }
