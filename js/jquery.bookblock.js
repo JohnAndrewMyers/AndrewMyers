@@ -9,7 +9,7 @@
  * http://www.codrops.com
  */
 ;
-(function($, window, undefined) {
+(function ($, window, undefined) {
 
 	'use strict';
 
@@ -23,33 +23,33 @@
 	* Licensed under the MIT license.
 	*/
 	var $event = $.event,
-	$special,
-	resizeTimeout;
+		$special,
+		resizeTimeout;
 
 	$special = $event.special.debouncedresize = {
-		setup: function() {
-			$( this ).on( "resize", $special.handler );
+		setup: function () {
+			$(this).on("resize", $special.handler);
 		},
-		teardown: function() {
-			$( this ).off( "resize", $special.handler );
+		teardown: function () {
+			$(this).off("resize", $special.handler);
 		},
-		handler: function( event, execAsap ) {
+		handler: function (event, execAsap) {
 			// Save the context
 			var context = this,
 				args = arguments,
-				dispatch = function() {
+				dispatch = function () {
 					// set correct event type
 					event.type = "debouncedresize";
-					$event.dispatch.apply( context, args );
+					$event.dispatch.apply(context, args);
 				};
 
-			if ( resizeTimeout ) {
-				clearTimeout( resizeTimeout );
+			if (resizeTimeout) {
+				clearTimeout(resizeTimeout);
 			}
 
 			execAsap ?
 				dispatch() :
-				resizeTimeout = setTimeout( dispatch, $special.threshold );
+				resizeTimeout = setTimeout(dispatch, $special.threshold);
 		},
 		threshold: 150
 	};
@@ -58,7 +58,7 @@
 	var $window = $(window),
 		Modernizr = window.Modernizr;
 
-	$.BookBlock = function(options, element) {
+	$.BookBlock = function (options, element) {
 
 		this.$el = $(element);
 		this._init(options);
@@ -68,48 +68,48 @@
 	// the options
 	$.BookBlock.defaults = {
 		// speed for the flip transition in ms
-		speed : 1000,
+		speed: 1000,
 		// easing for the flip transition
-		easing : 'ease-in-out',
+		easing: 'ease-in-out',
 		// if set to true, both the flipping page and the sides will have an overlay to simulate shadows
-		shadows : true,
+		shadows: true,
 		// opacity value for the "shadow" on both sides (when the flipping page is over it)
 		// value : 0.1 - 1
-		shadowSides : 0.2,
+		shadowSides: 0.2,
 		// opacity value for the "shadow" on the flipping page (while it is flipping)
 		// value : 0.1 - 1
-		shadowFlip : 0.1,
+		shadowFlip: 0.1,
 		// perspective value
-		perspective : 1300,
+		perspective: 1300,
 		// if we should show the first item after reaching the end
-		circular : false,
+		circular: false,
 		// if we want to specify a selector that triggers the next() function. example: '#bb-nav-next'
-		nextEl : '',
+		nextEl: '',
 		// if we want to specify a selector that triggers the prev() function
-		prevEl : '',
+		prevEl: '',
 		// autoplay. If true it overwrites the circular option to true
-		autoplay : false,
+		autoplay: false,
 		// time (ms) between page switch, if autoplay is true
-		interval : 3000,
+		interval: 3000,
 		//if we want to navigate the slides with the keyboard arrows
-		keyboard : true,
+		keyboard: true,
 		// callback after the flip transition
 		// old is the index of the previous item
 		// page is the current item's index
 		// isLimit is true if the current page is the last one (or the first one)
-		onEndFlip : function(old, page, isLimit) {
+		onEndFlip: function (old, page, isLimit) {
 			return false;
 		},
 		// callback before the flip transition
 		// page is the current item's index
-		onBeforeFlip : function(page) {
+		onBeforeFlip: function (page) {
 			return false;
 		}
 	};
 
 	$.BookBlock.prototype = {
 
-		_init: function(options) {
+		_init: function (options) {
 
 			// options
 			this.options = $.extend(true, {}, $.BookBlock.defaults, options);
@@ -149,13 +149,13 @@
 			}
 
 		},
-		_initEvents: function() {
+		_initEvents: function () {
 
 			var self = this;
 
 			if (this.options.nextEl !== '') {
 
-				$(this.options.nextEl).on('click.bookblock', function() {
+				$(this.options.nextEl).on('click.bookblock', function () {
 
 					self._action('next');
 					return false;
@@ -166,7 +166,7 @@
 
 			if (this.options.prevEl !== '') {
 
-				$(this.options.prevEl).on('click.bookblock', function() {
+				$(this.options.prevEl).on('click.bookblock', function () {
 
 					self._action('prev');
 					return false;
@@ -176,13 +176,13 @@
 			}
 
 			if (this.options.keyboard == true) {
-				$(document).keydown(function(e) {
+				$(document).keydown(function (e) {
 					var keyCode = e.keyCode || e.which,
 						arrow = {
-							left : 37,
-							up : 38,
-							right : 39,
-							down : 40
+							left: 37,
+							up: 38,
+							right: 39,
+							down: 40
 						};
 
 					switch (keyCode) {
@@ -196,21 +196,21 @@
 				});
 			}
 
-			$window.on( 'debouncedresize', function() {
-							
+			$window.on('debouncedresize', function () {
+
 				// update width value
 				self.elWidth = self.$el.width();
 
-			} )
+			})
 
 		},
-		_action : function(dir, page) {
+		_action: function (dir, page) {
 
 			this._stopSlideshow();
 			this._navigate(dir, page);
 
 		},
-		_navigate: function(dir, page) {
+		_navigate: function (dir, page) {
 
 			if (this.isAnimating) {
 				return false;
@@ -255,7 +255,7 @@
 			}
 
 			this.$nextItem = !this.options.circular && this.end ? this.$current : this.$items.eq(this.current);
-			
+
 			if (!this.support) {
 
 				this._layoutNoSupport(dir);
@@ -268,7 +268,7 @@
 
 		},
 		// with no support we consider no 3d transforms and transitions
-		_layoutNoSupport: function(dir) {
+		_layoutNoSupport: function (dir) {
 
 			this.$items.hide();
 			this.$nextItem.show();
@@ -280,7 +280,7 @@
 
 		},
 		// creates the necessary layout for the 3d animation, and triggers the transitions
-		_layout: function(dir) {
+		_layout: function (dir) {
 
 			var self = this,
 
@@ -303,7 +303,7 @@
 
 			$s_middle.css({
 				transition: 'all ' + speed + 'ms ' + this.options.easing
-			}).on(this.transEndEventName, function(event) {
+			}).on(this.transEndEventName, function (event) {
 
 				if (event.target.className === 'bb-page') {
 
@@ -361,7 +361,7 @@
 
 			}
 
-			setTimeout(function() {
+			setTimeout(function () {
 
 				var style = dir === 'next' ? 'rotateY(-180deg)' : 'rotateY(0deg)';
 
@@ -370,7 +370,7 @@
 					style = dir === 'next' ? 'rotateY(-15deg)' : 'rotateY(-165deg)';
 				}
 
-				$s_middle.css({transform: style});
+				$s_middle.css({ transform: style });
 
 				// overlays
 				if (self.options.shadows && !self.end) {
@@ -398,13 +398,13 @@
 
 		},
 		// adds the necessary sides (bb-page) to the layout 
-		_addSide: function(side, dir) {
+		_addSide: function (side, dir) {
 
 			var $side;
 
 			switch (side) {
 
-			case 'left':
+				case 'left':
 					/*
 					<div class="bb-page" style="z-index:2;">
 						<div class="bb-back">
@@ -419,10 +419,10 @@
 						</div>
 					</div>
 					*/
-				$side = $('<div class="bb-page"><div class="bb-back"><div class="bb-outer"><div class="bb-content" style="width:' + this.elWidth + 'px"><div class="bb-inner">' + (dir === 'next' ? this.$current.html() : this.$nextItem.html()) + '</div></div><div class="bb-overlay"></div></div></div></div>').css('z-index', 102);
-				break;
+					$side = $('<div class="bb-page"><div class="bb-back"><div class="bb-outer"><div class="bb-content" style="width:' + this.elWidth + 'px"><div class="bb-inner">' + (dir === 'next' ? this.$current.html() : this.$nextItem.html()) + '</div></div><div class="bb-overlay"></div></div></div></div>').css('z-index', 102);
+					break;
 
-			case 'middle':
+				case 'middle':
 					/*
 					<div class="bb-page" style="z-index:3;">
 						<div class="bb-front">
@@ -447,10 +447,10 @@
 						</div>
 					</div>
 					*/
-				$side = $('<div class="bb-page"><div class="bb-front"><div class="bb-outer"><div class="bb-content" style="left:' + (-this.elWidth / 2) + 'px;width:' + this.elWidth + 'px"><div class="bb-inner">' + (dir === 'next' ? this.$current.html() : this.$nextItem.html()) + '</div></div><div class="bb-flipoverlay"></div></div></div><div class="bb-back"><div class="bb-outer"><div class="bb-content" style="width:' + this.elWidth + 'px"><div class="bb-inner">' + (dir === 'next' ? this.$nextItem.html() : this.$current.html()) + '</div></div><div class="bb-flipoverlay"></div></div></div></div>').css('z-index', 103);
-				break;
+					$side = $('<div class="bb-page"><div class="bb-front"><div class="bb-outer"><div class="bb-content" style="left:' + (-this.elWidth / 2) + 'px;width:' + this.elWidth + 'px"><div class="bb-inner">' + (dir === 'next' ? this.$current.html() : this.$nextItem.html()) + '</div></div><div class="bb-flipoverlay"></div></div></div><div class="bb-back"><div class="bb-outer"><div class="bb-content" style="width:' + this.elWidth + 'px"><div class="bb-inner">' + (dir === 'next' ? this.$nextItem.html() : this.$current.html()) + '</div></div><div class="bb-flipoverlay"></div></div></div></div>').css('z-index', 103);
+					break;
 
-			case 'right':
+				case 'right':
 					/*
 					<div class="bb-page" style="z-index:1;">
 						<div class="bb-front">
@@ -465,19 +465,19 @@
 						</div>
 					</div>
 					*/
-				$side = $('<div class="bb-page"><div class="bb-front"><div class="bb-outer"><div class="bb-content" style="left:' + (-this.elWidth / 2) + 'px;width:' + this.elWidth + 'px"><div class="bb-inner">' + (dir === 'next' ? this.$nextItem.html() : this.$current.html()) + '</div></div><div class="bb-overlay"></div></div></div></div>').css('z-index', 101);
-				break;
+					$side = $('<div class="bb-page"><div class="bb-front"><div class="bb-outer"><div class="bb-content" style="left:' + (-this.elWidth / 2) + 'px;width:' + this.elWidth + 'px"><div class="bb-inner">' + (dir === 'next' ? this.$nextItem.html() : this.$current.html()) + '</div></div><div class="bb-overlay"></div></div></div></div>').css('z-index', 101);
+					break;
 
 			}
 
 			return $side;
 
 		},
-		_startSlideshow: function() {
+		_startSlideshow: function () {
 
 			var self = this;
 
-			this.slideshow = setTimeout(function() {
+			this.slideshow = setTimeout(function () {
 
 				self._navigate('next');
 
@@ -488,7 +488,7 @@
 			}, this.options.interval);
 
 		},
-		_stopSlideshow: function() {
+		_stopSlideshow: function () {
 
 			if (this.options.autoplay) {
 
@@ -499,15 +499,15 @@
 
 		},
 		// public method: flips next
-		next: function() {
+		next: function () {
 			this._action('next');
 		},
 		// public method: flips back
-		prev: function() {
+		prev: function () {
 			this._action('prev');
 		},
 		// public method: goes to a specific page
-		jump: function(page) {
+		jump: function (page) {
 
 			page -= 1;
 
@@ -519,14 +519,14 @@
 
 		},
 		// public method: check if isAnimating is true
-		isActive: function() {
+		isActive: function () {
 			return this.isAnimating;
 		},
 		// public method: dynamically adds new elements
 		// call this method after inserting new "bb-item" elements inside the BookBlock
-		update : function () {
+		update: function () {
 
-			var $currentItem = this.$items.eq( this.current );
+			var $currentItem = this.$items.eq(this.current);
 			this.$items = this.$el.children('.bb-item');
 			this.itemsCount = this.$items.length;
 			this.current = $currentItem.index();
@@ -535,13 +535,13 @@
 
 	};
 
-	var logError = function(message) {
+	var logError = function (message) {
 		if (window.console) {
 			window.console.error(message);
 		}
 	};
 
-	$.fn.bookblock = function(options) {
+	$.fn.bookblock = function (options) {
 
 		var instance = $.data(this, 'bookblock');
 
@@ -549,7 +549,7 @@
 
 			var args = Array.prototype.slice.call(arguments, 1);
 
-			this.each(function() {
+			this.each(function () {
 
 				if (!instance) {
 
@@ -571,7 +571,7 @@
 
 		} else {
 
-			this.each(function() {
+			this.each(function () {
 
 				if (instance) {
 

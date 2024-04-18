@@ -1,176 +1,184 @@
 var Page = (function() {
 
-	var $container = $( '#container' ),
-		$bookBlock = $( '#bb-bookblock' ),
-		$items = $bookBlock.children(),
-		itemsCount = $items.length,
-		current = 0,
-		bb = $( '#bb-bookblock' ).bookblock( {
-			speed : 800,
-			perspective : 2000,
-			shadowSides	: 0.8,
-			shadowFlip	: 0.4,
-			onEndFlip : function(old, page, isLimit) {
-				
-				current = page;
-				// update TOC current
-				updateTOC();
-				// updateNavigation
-				updateNavigation( isLimit );
-				// initialize jScrollPane on the content div for the new item
-				setJSP( 'init' );
-				// destroy jScrollPane on the content div for the old item
-				setJSP( 'destroy', old );
+  var $container = $('#container'),
+    $bookBlock = $('#bb-bookblock'),
+    $items = $bookBlock.children(),
+    itemsCount = $items.length,
+    current = 0,
+    bb = $('#bb-bookblock').bookblock({
+      speed: 800,
+      perspective: 2000,
+      shadowSides: 0.8,
+      shadowFlip: 0.4,
+      onEndFlip: function(old, page, isLimit) {
 
-			}
-		} ),
-		$navNext = $( '#bb-nav-next' ),
-		$navPrev = $( '#bb-nav-prev' ).hide(),
-		$menuItems = $container.find( 'ul.menu-toc > li' ),
-		$tblcontents = $( '#tblcontents' ),
-		transEndEventNames = {
-			'WebkitTransition': 'webkitTransitionEnd',
-			'MozTransition': 'transitionend',
-			'OTransition': 'oTransitionEnd',
-			'msTransition': 'MSTransitionEnd',
-			'transition': 'transitionend'
-		},
-		transEndEventName = transEndEventNames[Modernizr.prefixed('transition')],
-		supportTransitions = Modernizr.csstransitions;
+        current = page;
+        // update TOC current
+        updateTOC();
+        // updateNavigation
+        updateNavigation(isLimit);
+        // initialize jScrollPane on the content div for the new item
+        setJSP('init');
+        // destroy jScrollPane on the content div for the old item
+        setJSP('destroy', old);
 
-	function init() {
+      }
+    }),
+    $navNext = $('#bb-nav-next'),
+    $navPrev = $('#bb-nav-prev').hide(),
+    $menuItems = $container.find('ul.menu-toc > li'),
+    $tblcontents = $('#tblcontents'),
+    transEndEventNames = {
+      'WebkitTransition': 'webkitTransitionEnd',
+      'MozTransition': 'transitionend',
+      'OTransition': 'oTransitionEnd',
+      'msTransition': 'MSTransitionEnd',
+      'transition': 'transitionend'
+    },
+    transEndEventName = transEndEventNames[Modernizr.prefixed('transition')],
+    supportTransitions = Modernizr.csstransitions;
 
-		// initialize jScrollPane on the content div of the first item
-		setJSP( 'init' );
-		initEvents();
+  function init() {
 
-	}
-	
-	function initEvents() {
+    // initialize jScrollPane on the content div of the first item
+    setJSP('init');
+    initEvents();
 
-		// add navigation events
-		$navNext.on( 'click', function() {
-			bb.next();
-			return false;
-		} );
+  }
 
-		$navPrev.on( 'click', function() {
-			bb.prev();
-			return false;
-		} );
-		
-		// add swipe events
-		$items.on( {
-			'swipeleft'		: function( event ) {
-				if( $container.data( 'opened' ) ) {
-					return false;
-				}
-				bb.next();
-				return false;
-			},
-			'swiperight'	: function( event ) {
-				if( $container.data( 'opened' ) ) {
-					return false;
-				}
-				bb.prev();
-				return false;
-			}
-		} );
+  function initEvents() {
 
-		// show table of contents
-		$tblcontents.on( 'click', toggleTOC );
+    // add navigation events
+    $navNext.on('click', function() {
+      bb.next();
+      return false;
+    });
 
-		// click a menu item
-		$menuItems.on( 'click', function() {
+    $navPrev.on('click', function() {
+      bb.prev();
+      return false;
+    });
 
-			var $el = $( this ),
-				idx = $el.index(),
-				jump = function() {
-					bb.jump( idx + 1 );
-				};
-			
-			current !== idx ? closeTOC( jump ) : closeTOC();
+    // add swipe events
+    $items.on({
+      'swipeleft': function(event) {
+        if ($container.data('opened')) {
+          return false;
+        }
+        bb.next();
+        return false;
+      },
+      'swiperight': function(event) {
+        if ($container.data('opened')) {
+          return false;
+        }
+        bb.prev();
+        return false;
+      }
+    });
 
-			return false;
-			
-		} );
+    // show table of contents
+    $tblcontents.on('click', toggleTOC);
 
-		// reinit jScrollPane on window resize
-		$( window ).on( 'debouncedresize', function() {
-			// reinitialise jScrollPane on the content div
-			setJSP( 'reinit' );
-		} );
+    // click a menu item
+    $menuItems.on('click', function() {
+      var $el = $(this),
+        idx = $el.index(),
+        jump = function() {
+          bb.jump(idx + 1);
+        };
 
-	}
+      current !== idx ? closeTOC(jump) : closeTOC();
 
-	function setJSP( action, idx ) {
-		
-		var idx = idx === undefined ? current : idx,
-			$content = $items.eq( idx ).children( 'div.content' ),
-			apiJSP = $content.data( 'jsp' );
-		
-		if( action === 'init' && apiJSP === undefined ) {
-			$content.jScrollPane({verticalGutter : 0, hideFocus : true });
-		}
-		else if( action === 'reinit' && apiJSP !== undefined ) {
-			apiJSP.reinitialise();
-		}
-		else if( action === 'destroy' && apiJSP !== undefined ) {
-			apiJSP.destroy();
-		}
+      return false;
+    });
 
-	}
+    // reinit jScrollPane on window resize
+    $(window).on('debouncedresize', function() {
+      // reinitialise jScrollPane on the content div
+      setJSP('reinit');
+    });
 
-	function updateTOC() {
-		$menuItems.removeClass( 'menu-toc-current' ).eq( current ).addClass( 'menu-toc-current' );
-	}
+    // Add click event listener to the document
+    $(document).on('click', function(event) {
+      // Check if the clicked element is not inside the tblcontents
+      if (!$(event.target).closest('#tblcontents').length) {
+        // If the tblcontents is open, close it
+        if ($container.data('opened')) {
+          closeTOC();
+        }
+      }
+    });
+  }
 
-	function updateNavigation( isLastPage ) {
-		
-		if( current === 0 ) {
-			$navNext.show();
-			$navPrev.hide();
-		}
-		else if( isLastPage ) {
-			$navNext.hide();
-			$navPrev.show();
-		}
-		else {
-			$navNext.show();
-			$navPrev.show();
-		}
+  function setJSP(action, idx) {
 
-	}
+    var idx = idx === undefined ? current : idx,
+      $content = $items.eq(idx).children('div.content'),
+      apiJSP = $content.data('jsp');
 
-	function toggleTOC() {
-		var opened = $container.data( 'opened' );
-		opened ? closeTOC() : openTOC();
-	}
+    if (action === 'init' && apiJSP === undefined) {
+      $content.jScrollPane({
+        verticalGutter: 0,
+        hideFocus: true
+      });
+    } else if (action === 'reinit' && apiJSP !== undefined) {
+      apiJSP.reinitialise();
+    } else if (action === 'destroy' && apiJSP !== undefined) {
+      apiJSP.destroy();
+    }
 
-	function openTOC() {
-		$navNext.hide();
-		$navPrev.hide();
-		$container.addClass( 'slideRight' ).data( 'opened', true );
-	}
+  }
 
-	function closeTOC( callback ) {
+  function updateTOC() {
+    $menuItems.removeClass('menu-toc-current').eq(current).addClass('menu-toc-current');
+  }
 
-		updateNavigation( current === itemsCount - 1 );
-		$container.removeClass( 'slideRight' ).data( 'opened', false );
-		if( callback ) {
-			if( supportTransitions ) {
-				$container.on( transEndEventName, function() {
-					$( this ).off( transEndEventName );
-					callback.call();
-				} );
-			}
-			else {
-				callback.call();
-			}
-		}
+  function updateNavigation(isLastPage) {
 
-	}
+    if (current === 0) {
+      $navNext.show();
+      $navPrev.hide();
+    } else if (isLastPage) {
+      $navNext.hide();
+      $navPrev.show();
+    } else {
+      $navNext.show();
+      $navPrev.show();
+    }
 
-	return { init : init };
+  }
+
+  function toggleTOC() {
+    var opened = $container.data('opened');
+    opened ? closeTOC() : openTOC();
+  }
+
+  function openTOC() {
+    $navNext.hide();
+    $navPrev.hide();
+    $container.addClass('slideRight').data('opened', true);
+  }
+
+  function closeTOC(callback) {
+
+    updateNavigation(current === itemsCount - 1);
+    $container.removeClass('slideRight').data('opened', false);
+    if (callback) {
+      if (supportTransitions) {
+        $container.on(transEndEventName, function() {
+          $(this).off(transEndEventName);
+          callback.call();
+        });
+      } else {
+        callback.call();
+      }
+    }
+
+  }
+
+  return {
+    init: init
+  };
 
 })();
